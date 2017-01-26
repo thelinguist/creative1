@@ -6,38 +6,76 @@
 	 xml:space="preserve">
 <image overflow="visible" width="1426" height="1426" xlink:href="me at night profile.jpg"  transform="matrix(0.0479 0.0119 -0.0125 0.0503 172.1907 354.8359)">
 </image>
-<image overflow="visible" width="3243" height="2204" xlink:href="adam.jpg"  transform="matrix(0.013 -0.0213 0.0249 0.0152 337.1619 328.1621)">
+<image overflow="visible" width="3243" height="2204" xlink:href="../../../Desktop/backup/adam.jpg"  transform="matrix(-0.0112 0.0204 -0.0256 -0.014 126.3196 149.6968)">
 </image>
 <g>
 	<defs>
-		<rect id="SVGID_1_" x="364.662" y="207.412" width="80.5" height="61.25"/>
+		
+			<rect id="SVGID_1_" x="31.745" y="199.246" transform="matrix(0.0085 1 -1 0.0085 301.7429 165.5108)" width="71.332" height="71.333"/>
 	</defs>
 	<clipPath id="SVGID_2_">
 		<use xlink:href="#SVGID_1_"  overflow="visible"/>
 	</clipPath>
-	<g transform="matrix(1 0 -2.328306e-10 1 3.051758e-05 3.051758e-05)" clip-path="url(#SVGID_2_)">
+	<g clip-path="url(#SVGID_2_)">
+		<defs>
+			
+				<rect id="SVGID_3_" x="19.268" y="197.01" transform="matrix(0.0398 -0.9992 0.9992 0.0398 -169.1101 288.3177)" width="92.372" height="70.27"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		</clipPath>
+		<g transform="matrix(1 0 -3.725290e-09 1 0 -1.525879e-05)" clip-path="url(#SVGID_4_)">
+			
+				<image overflow="visible" width="2101" height="1401" xlink:href="window.jpg"  transform="matrix(-0.0017 0.0439 -0.0501 -0.002 102.3972 187.3936)">
+			</image>
+		</g>
+	</g>
+</g>
+<image overflow="visible" width="1824" height="2736" xlink:href="Star-Trails-Web.jpg"  transform="matrix(-0.0272 0.0216 -0.0216 -0.0272 191.1624 122.6196)">
+</image>
+<image overflow="visible" width="1335" height="1080" xlink:href="bro.jpg"  transform="matrix(0.0278 0.0555 -0.0555 0.0278 97.2727 261.1982)">
+</image>
+<g>
+	<defs>
 		
-			<image overflow="visible" width="8888" height="5000" xlink:href="goodnight pluto web.jpg"  transform="matrix(-3.089581e-05 -0.0121 0.0125 -3.194036e-05 371.7175 310.2607)">
+			<rect id="SVGID_5_" x="99.662" y="333.836" transform="matrix(0.7916 0.611 -0.611 0.7916 250.515 -2.0663)" width="57.25" height="64.827"/>
+	</defs>
+	<clipPath id="SVGID_6_">
+		<use xlink:href="#SVGID_5_"  overflow="visible"/>
+	</clipPath>
+	<g transform="matrix(1 0 0 1 7.629395e-06 0)" clip-path="url(#SVGID_6_)">
+		
+			<image overflow="visible" width="3068" height="2046" xlink:href="../../../Downloads/dancing.jpg"  transform="matrix(0.0247 0.0202 -0.0202 0.0247 123.1174 320.6543)">
 		</image>
 	</g>
+</g>
+<image overflow="visible" width="3243" height="2204" xlink:href="../../../Desktop/backup/adam.jpg"  transform="matrix(0.013 -0.0213 0.0249 0.0152 337.1619 328.1621)">
+</image>
+<g>
+	<defs>
+		<rect id="SVGID_7_" x="364.662" y="207.412" width="80.5" height="61.25"/>
+	</defs>
+	<clipPath id="SVGID_8_">
+		<use xlink:href="#SVGID_7_"  overflow="visible"/>
+	</clipPath>
 </g>
 <g>
 	<defs>
 		
-			<rect id="SVGID_3_" x="305.245" y="330.742" transform="matrix(0.7521 -0.659 0.659 0.7521 -156.9683 315.4999)" width="71.333" height="71.333"/>
+			<rect id="SVGID_9_" x="305.245" y="330.742" transform="matrix(0.7521 -0.659 0.659 0.7521 -156.9683 315.4999)" width="71.333" height="71.333"/>
 	</defs>
-	<clipPath id="SVGID_4_">
-		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	<clipPath id="SVGID_10_">
+		<use xlink:href="#SVGID_9_"  overflow="visible"/>
 	</clipPath>
-	<g clip-path="url(#SVGID_4_)">
+	<g clip-path="url(#SVGID_10_)">
 		<defs>
 			
-				<rect id="SVGID_5_" x="293.907" y="334.562" transform="matrix(-0.783 0.622 -0.622 -0.783 836.3407 447.6535)" width="92.372" height="70.271"/>
+				<rect id="SVGID_11_" x="293.907" y="334.562" transform="matrix(-0.783 0.622 -0.622 -0.783 836.3407 447.6535)" width="92.372" height="70.271"/>
 		</defs>
-		<clipPath id="SVGID_6_">
-			<use xlink:href="#SVGID_5_"  overflow="visible"/>
+		<clipPath id="SVGID_12_">
+			<use xlink:href="#SVGID_11_"  overflow="visible"/>
 		</clipPath>
-		<g clip-path="url(#SVGID_6_)">
+		<g clip-path="url(#SVGID_12_)">
 			
 				<image overflow="visible" width="2101" height="1401" xlink:href="window.jpg"  transform="matrix(0.0344 -0.0273 0.0312 0.0393 282.074 370.9121)">
 			</image>
