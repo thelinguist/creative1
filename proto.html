@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+<style>
+body {
+	background-color:#D7EFFF;
+}
+#topbar {
+	text-align:center;
+	height:auto;
+
+}
+/* 	div-after: +
+	div-later: ~
+	div-child: as seen below
+	*/
+#topbar:hover #slide {
+	width:80%;
+	transition:1.5s;
+}
+#topbar:hover .vm-slide {
+	width:10vw;
+	height:15vw;
+	transition:1.5s;
+}
+
+#name {
+	width: 50%;
+	z-index: 3;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right: 0;
+}
+
+h1 {
+	font-family: 'Shrikhand';
+	margin:auto;
+    font-size: 6vw;
+    color: white;
+	text-shadow: -4px 0 #DD0000, 0 7px #DD0000, 4px 0 #DD0000, 0 -2px #DD0000;
+	}
+	
+#slide {
+	width:70%;
+	position:absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	top:-40vw;
+	right: 0;
+	transition:1.5s;
+
+}
+
+#slide-vector {
+	/*from http://stackoverflow.com/questions/6088409/svg-drop-shadow-using-css3 */
+    -webkit-filter: drop-shadow( 2px 1px rgba(0,0,0,0.35) );
+            filter: drop-shadow( 2px 1px rgba(0,0,0,0.35) );
+	width:100%;
+	z-index:2;
+}
+
+.eighties-btn {
+	background-color:#DD0000;
+	box-shadow:inset 1px 4px 3px -2px #FCE3E3, 1px 4px 6px -3px #100506;
+	border-radius:5px;
+	display:inline;
+	padding:6px;
+	float:left;
+}
+
+.flip {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.vm-slide {
+	position:absolute;
+	transition:1.5s;
+	width:8vw;
+	height:12vw;
+	z-index:-1;
+}
+
+#vm-1 {
+		transform: translate(-10vw, -16vw);
+}
+
+/*
+for handle
+#slide-changer {
+	position:absolute;
+	z-index:1;
+	top:0;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right: 40vw;
+}
+#slide-changer:after {
+	
+}
+*/
+
+</style>
+<script>
+//from: http://www.w3schools.com/css/css3_2dtransforms.asp
+var x,y,n=0,ny=0,rotINT,rotYINT
+
+function rotateDIV()
+{
+x=document.getElementById("slide")
+clearInterval(rotINT)
+rotINT=setInterval("startRotate()",10)
+}
+function startRotate()
+{
+n=n+1
+x.style.transform="rotate(" + n + "deg)"
+x.style.webkitTransform="rotate(" + n + "deg)"
+x.style.OTransform="rotate(" + n + "deg)"
+x.style.MozTransform="rotate(" + n + "deg)"
+if (n==180 || n==360)
+{
+clearInterval(rotINT)
+if (n==360){n=0}
+}
+}
+
+</script>
+</head>
+
+<body>
+
+<div id="topbar">
+  <div id="slide">
+  	<img id="slide-vector" src="ViewMaster.svg" alt="View-Master Slide"/>
+    <img class="vm-slide" src="me at night profile.jpg" id="vm-1" alt="profile" />
+    <img class="vm-slide" src="me at night profile.jpg" id="vm-2" alt="profile" />
+    </div>
+        <div class="eighties-btn" onmouseover="rotateDIV()"><img src="triangle-rounded.svg" alt="right" height="40" width="40" class="flip" /></div>
+    	<div class="eighties-btn" style="margin-left:50vw;float:right" onmouseover="rotateDIV()"><img src="triangle-rounded.svg" alt="right" height="40" width="40"/>
+  </div>
+  <div id="name">
+	<h1>Bryce</h1><h1>Shelley</h1>
+  </div>
+</div>
+<div class="content">Reverse SSH Tunneling
+Have you ever wanted to ssh to your Linux box that sits behind NAT? Now you can with reverse SSH tunneling. This document will show you step by step how to set up reverse SSH tunneling. The reverse SSH tunneling should work fine with Unix like systems.
+Let's assume that Destination's IP is 192.168.20.55 (Linux box that you want to access).
+You want to access from Linux client with IP 138.47.99.99.
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99)
+1. SSH from the destination to the source (with public ip) using command below:
+ssh -R 19999:localhost:22 sourceuser@138.47.99.99
+
+* port 19999 can be any unused port.
+2. Now you can SSH from source to destination through SSH tuneling:
+ssh localhost -p 19999
+
+3. 3rd party servers can also access 192.168.20.55 through Destination (138.47.99.99).
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99) <- Bob's server
+3.1 From Bob's server:
+ssh sourceuser@138.47.99.99
+
+3.2 After the sucessful login to Source:
+ssh localhost -p 19999
+
+* the connection between destination and source must be alive at all time.
+Tip: you may run a command (e.g. watch, top) on Destination to keep the connection active.
+
+Reverse SSH Tunneling
+Have you ever wanted to ssh to your Linux box that sits behind NAT? Now you can with reverse SSH tunneling. This document will show you step by step how to set up reverse SSH tunneling. The reverse SSH tunneling should work fine with Unix like systems.
+Let's assume that Destination's IP is 192.168.20.55 (Linux box that you want to access).
+You want to access from Linux client with IP 138.47.99.99.
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99)
+1. SSH from the destination to the source (with public ip) using command below:
+ssh -R 19999:localhost:22 sourceuser@138.47.99.99
+
+* port 19999 can be any unused port.
+2. Now you can SSH from source to destination through SSH tuneling:
+ssh localhost -p 19999
+
+3. 3rd party servers can also access 192.168.20.55 through Destination (138.47.99.99).
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99) <- Bob's server
+3.1 From Bob's server:
+ssh sourceuser@138.47.99.99
+
+3.2 After the sucessful login to Source:
+ssh localhost -p 19999
+
+* the connection between destination and source must be alive at all time.
+Tip: you may run a command (e.g. watch, top) on Destination to keep the connection active.
+Reverse SSH Tunneling
+Have you ever wanted to ssh to your Linux box that sits behind NAT? Now you can with reverse SSH tunneling. This document will show you step by step how to set up reverse SSH tunneling. The reverse SSH tunneling should work fine with Unix like systems.
+Let's assume that Destination's IP is 192.168.20.55 (Linux box that you want to access).
+You want to access from Linux client with IP 138.47.99.99.
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99)
+1. SSH from the destination to the source (with public ip) using command below:
+ssh -R 19999:localhost:22 sourceuser@138.47.99.99
+
+* port 19999 can be any unused port.
+2. Now you can SSH from source to destination through SSH tuneling:
+ssh localhost -p 19999
+
+3. 3rd party servers can also access 192.168.20.55 through Destination (138.47.99.99).
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99) <- Bob's server
+3.1 From Bob's server:
+ssh sourceuser@138.47.99.99
+
+3.2 After the sucessful login to Source:
+ssh localhost -p 19999
+
+* the connection between destination and source must be alive at all time.
+Tip: you may run a command (e.g. watch, top) on Destination to keep the connection active.
+Reverse SSH Tunneling
+Have you ever wanted to ssh to your Linux box that sits behind NAT? Now you can with reverse SSH tunneling. This document will show you step by step how to set up reverse SSH tunneling. The reverse SSH tunneling should work fine with Unix like systems.
+Let's assume that Destination's IP is 192.168.20.55 (Linux box that you want to access).
+You want to access from Linux client with IP 138.47.99.99.
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99)
+1. SSH from the destination to the source (with public ip) using command below:
+ssh -R 19999:localhost:22 sourceuser@138.47.99.99
+
+* port 19999 can be any unused port.
+2. Now you can SSH from source to destination through SSH tuneling:
+ssh localhost -p 19999
+
+3. 3rd party servers can also access 192.168.20.55 through Destination (138.47.99.99).
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99) <- Bob's server
+3.1 From Bob's server:
+ssh sourceuser@138.47.99.99
+
+3.2 After the sucessful login to Source:
+ssh localhost -p 19999
+
+* the connection between destination and source must be alive at all time.
+Tip: you may run a command (e.g. watch, top) on Destination to keep the connection active.
+Reverse SSH Tunneling
+Have you ever wanted to ssh to your Linux box that sits behind NAT? Now you can with reverse SSH tunneling. This document will show you step by step how to set up reverse SSH tunneling. The reverse SSH tunneling should work fine with Unix like systems.
+Let's assume that Destination's IP is 192.168.20.55 (Linux box that you want to access).
+You want to access from Linux client with IP 138.47.99.99.
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99)
+1. SSH from the destination to the source (with public ip) using command below:
+ssh -R 19999:localhost:22 sourceuser@138.47.99.99
+
+* port 19999 can be any unused port.
+2. Now you can SSH from source to destination through SSH tuneling:
+ssh localhost -p 19999
+
+3. 3rd party servers can also access 192.168.20.55 through Destination (138.47.99.99).
+Destination (192.168.20.55) <- |NAT| <- Source (138.47.99.99) <- Bob's server
+3.1 From Bob's server:
+ssh sourceuser@138.47.99.99
+
+3.2 After the sucessful login to Source:
+ssh localhost -p 19999
+
+* the connection between destination and source must be alive at all time.
+Tip: you may run a command (e.g. watch, top) on Destination to keep the connection active.</div>
+</body>
+</html>
